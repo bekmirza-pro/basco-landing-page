@@ -1,0 +1,109 @@
+@mixin responsive($breakpoint) {
+    @if $breakpoint==mobile {
+        @media (max-width: 392px) {
+            @content;
+        }
+    }
+    @if $breakpoint==desktop {
+        @media (min-width: 1400px) {
+            @content;
+        }
+    }
+    @if $breakpoint==big {
+        @media (max-width: 1260px) {
+            @content;
+        }
+    }
+    @if $breakpoint==yetti {
+        @media (max-width: 700px) {
+            @content;
+        }
+    }
+}
+
+.footer__box {
+    width: 100%;
+    margin: 0 auto;
+    @include responsive(desktop) {
+        width: 1460px;
+    }
+    @include responsive(big) {
+        width: 100%;
+    }
+    @include responsive(mobile) {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.footer {
+    &__head {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin: 10rem auto;
+        margin-bottom: 5rem;
+        @include responsive(mobile) {
+            margin: 4rem auto;
+        }
+        &--img {
+            &--1 {
+                position: absolute;
+                z-index: 2;
+                left: 40%;
+                @include responsive(mobile) {
+                    width: 63px;
+                    height: 57px;
+                    left: 32%;
+                }
+            }
+            &--2 {
+                z-index: 3;
+                position: absolute;
+                left: 44%;
+                top: -8rem;
+                @include responsive(mobile) {
+                    width: 63px;
+                    height: 57px;
+                    left: 40%;
+                    top: -4.5rem;
+                }
+            }
+            &--3 {
+                position: absolute;
+                z-index: 2;
+                left: 50%;
+                @include responsive(mobile) {
+                    width: 63px;
+                    height: 57px;
+                    left: 48%;
+                }
+            }
+        }
+    }
+    &__body {
+        text-align: center;
+        &--title {
+            font-size: 2.5rem;
+            margin: 1rem;
+            @include responsive(big) {
+                font-size: 1.8rem;
+            }
+            @include responsive(mobile) {
+                font-size: 13px;
+            }
+        }
+        &--parag {
+            font-size: 1.8rem;
+            // margin-bottom: 5rem;
+            @include responsive(big) {
+                font-size: 1.4rem;
+                margin-bottom: 2rem;
+            }
+            @include responsive(mobile) {
+                font-size: 11px;
+            }
+        }
+    }
+}

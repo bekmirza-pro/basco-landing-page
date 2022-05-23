@@ -1,0 +1,315 @@
+@mixin responsive($breakpoint) {
+    @if $breakpoint==mobile {
+        @media (max-width: 888px) {
+            @content;
+        }
+    }
+    @if $breakpoint==desktop {
+        @media (min-width: 1400px) {
+            @content;
+        }
+    }
+    @if $breakpoint==big {
+        @media (max-width: 1260px) {
+            @content;
+        }
+    }
+    @if $breakpoint==toqqiz {
+        @media (max-width: 1200px) {
+            @content;
+        }
+    }
+    @if $breakpoint==yetti {
+        @media (max-width: 700px) {
+            @content;
+        }
+    }
+    @if $breakpoint==tort {
+        @media (max-width: 400px) {
+            @content;
+        }
+    }
+    @if $breakpoint==tort2 {
+        @media (max-width: 450px) {
+            @content;
+        }
+    }
+}
+
+.statistica {
+    height: 960px;
+    background-color: #11172a;
+    padding-bottom: 3rem;
+    color: #fff;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 3rem;
+    @include responsive(desktop) {
+        width: 100%;
+    }
+    @include responsive(big) {
+        width: 100%;
+        height: auto;
+    }
+    @include responsive(mobile) {
+        height: auto;
+        width: 100%;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        // margin-left: 0.8rem;
+        background: linear-gradient( 20.49deg, #11172a 23.78%, #1b233b 57.45%, #2f3a5e 91.48%, rgba(17, 23, 42, 0.93) 91.48%);
+    }
+    @include responsive(tort) {
+        width: 100%;
+    }
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @include responsive(mobile) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    &__left {
+        position: relative;
+        margin-left: 2rem;
+        // padding: 2rem;
+        @include responsive(mobile) {
+            top: 50rem;
+        }
+        &--img--1 {
+            position: absolute;
+            width: 469px;
+            height: 354px;
+            margin-top: 145px;
+            @include responsive(big) {
+                width: 350px;
+                height: 300px;
+            }
+            @include responsive(toqqiz) {
+                width: 260px;
+                height: 220px;
+                margin-top: 60px;
+            }
+            @include responsive(yetti) {
+                width: 190px;
+                height: 160px;
+                margin-top: 75px;
+            }
+            @include responsive(mobile) {
+                width: 203px;
+                height: 156px;
+                top: -10rem;
+                left: 24%;
+                margin-top: 0;
+            }
+            @include responsive(tort) {
+                width: 180px;
+                height: 130px;
+                top: -15rem;
+            }
+        }
+        &--img--2 {
+            position: absolute;
+            width: 520px;
+            height: 290px;
+            top: 45.5%;
+            left: 11%;
+            @include responsive(big) {
+                width: 320px;
+                height: 200px;
+                top: 55%;
+            }
+            @include responsive(toqqiz) {
+                width: 260px;
+                height: 160px;
+                top: 45%;
+            }
+            @include responsive(yetti) {
+                width: 200px;
+                height: 140px;
+                top: 40%;
+            }
+            @include responsive(mobile) {
+                width: 193px;
+                height: 131px;
+                top: -2rem;
+                left: 30%;
+            }
+            @include responsive(tort) {
+                width: 180px;
+                height: 110px;
+                top: -80px;
+                right: -2rem;
+            }
+        }
+        &--img--3 {
+            position: absolute;
+            width: 50%;
+            height: 80%;
+            top: 20%;
+            color: #fff;
+            left: 25%;
+        }
+    }
+    &__right {
+        display: block;
+        margin-left: 2rem;
+        @include responsive(tort2) {
+            margin-left: 0;
+            // padding-left: 1.2rem;
+        }
+        @include responsive(tort) {
+            width: 76%;
+            margin-left: 3rem;
+        }
+        &--title {
+            font-size: 3.5rem;
+            margin-top: 6.1rem;
+            line-height: 52px;
+            @include responsive(big) {
+                font-size: 2.4rem;
+                line-height: 30px;
+            }
+            @include responsive(toqqiz) {
+                font-size: 1.7rem;
+                margin-top: 2rem;
+            }
+            @include responsive(mobile) {
+                font-size: 16px;
+                line-height: 24px;
+            }
+            @include responsive(tort) {
+                font-size: 9px;
+                line-height: 14px;
+                margin-left: 0.3rem;
+                width: 100%;
+            }
+        }
+        &--parag {
+            margin-top: 0.6rem;
+            font-size: 2.4rem;
+            line-height: 36px;
+            margin-bottom: 3rem;
+            font-weight: 400;
+            width: 80%;
+            @include responsive(big) {
+                font-size: 16px;
+                line-height: 25px;
+            }
+            @include responsive(toqqiz) {
+                font-size: 1.4rem;
+                line-height: 1.4rem;
+            }
+            @include responsive(mobile) {
+                font-size: 11px;
+                line-height: 16.5px;
+            }
+            @include responsive(tort) {
+                font-size: 9px;
+                line-height: 14px;
+                margin-left: 0.3rem;
+                width: 80%;
+                margin-bottom: 1rem;
+            }
+        }
+        &--item {
+            display: flex;
+            margin-top: 80px;
+            @include responsive(big) {
+                margin-top: 30px;
+            }
+            @include responsive(toqqiz) {
+                margin-top: 1rem;
+            }
+            @include responsive(tort) {
+                margin-top: 1.2rem;
+            }
+            &--left {
+                background-color: #232c49;
+                width: 82px;
+                display: flex;
+                height: 60px;
+                border-radius: 50%;
+                color: #fff;
+                padding: 2.2rem;
+                align-items: center;
+                justify-content: center;
+                margin-right: 4rem;
+                font-size: 2rem;
+                font-weight: 100;
+                @include responsive(big) {
+                    height: 60px;
+                    width: 60px;
+                    font-size: 1.5rem;
+                }
+                @include responsive(toqqiz) {
+                    height: 24px;
+                    width: 27px;
+                    margin-right: 1rem;
+                }
+                @include responsive(mobile) {
+                    width: 43px;
+                    height: 43px;
+                    font-size: 1.2rem;
+                    font-weight: 300;
+                    margin-right: 1rem;
+                    // margin-left: 4rem;
+                }
+                @include responsive(tort) {
+                    margin-left: 2rem;
+                    padding: 1rem;
+                    width: 13px;
+                    height: 13px;
+                    font-size: 0.5rem;
+                }
+            }
+            &--right {
+                b {
+                    display: block;
+                    font-size: 2.3rem;
+                    margin-bottom: 0.2rem;
+                    width: 38rem;
+                    @include responsive(toqqiz) {
+                        font-size: 1.1rem;
+                    }
+                    font-size: 17px;
+                    @include responsive(mobile) {
+                        font-size: 11px;
+                        line-height: 16.5px;
+                        font-weight: 500;
+                    }
+                    @include responsive(tort) {
+                        font-size: 8px;
+                        width: 90%;
+                    }
+                }
+                p {
+                    width: 85%;
+                    font-size: 1.5rem;
+                    @include responsive(big) {
+                        font-size: 1.2rem;
+                    }
+                    @include responsive(toqqiz) {
+                        font-size: 0.9rem;
+                    }
+                    @include responsive(mobile) {
+                        font-size: 8px;
+                    }
+                    @include responsive(tort) {
+                        font-size: 6px;
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ajrat {
+    @include responsive(mobile) {
+        // margin-left: -4rem;
+    }
+    @include responsive(tort) {
+        margin-left: -1rem;
+    }
+}
