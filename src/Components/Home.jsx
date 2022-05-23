@@ -10,7 +10,7 @@ import Questions from "./Questions/Questions";
 import Statistics from "./Statistica/Statistics";
 import Suggestions from "./Suggestions/Suggestions";
 import Directions from "./Directions/Directions";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 function Home() {
   return (
     <>
